@@ -10,7 +10,10 @@ import java.util.Map;
  * @Description:
  */
 public class LocalCache {
+
     private static Map<Long, Product> productMap = new HashMap<>();
+
+    private static Map<Long, Cart> cartMap = new HashMap<>();
 
     static {
         productMap.put(1l, new Product(1l, "HTML/CSS", "HTML+CSS基础课程", "HTML+CSS基础教程8小时带领大家步步深入学习标签用法和意义", "初级", 219));
@@ -40,7 +43,46 @@ public class LocalCache {
         productMap.put(25l, new Product(25l, "HTML/CSS", "HTML+CSS基础课程", "HTML+CSS基础教程8小时带领大家步步深入学习标签用法和意义", "初级", 219));
     }
 
+    private LocalCache() {}
+
     public static List<Product> getProducts() {
         return new ArrayList<>(productMap.values());
     }
+
+    public static Product getProduct(Long id) {
+        return productMap.get(id);
+    }
+
+    public static void addCart(Product product) {
+        if (!cartMap.containsKey(product.getId())) {
+            cartMap.put(product.getId(), new Cart(product.getId(), product.getId(), product.getName(), product.getPrice(), 1));
+        } else {
+            incrCart(product.getId());
+        }
+    }
+
+    public static List<Cart> getCarts() {
+        return new ArrayList<>(cartMap.values());
+    }
+
+    public static void delCart(Long productId) {
+        cartMap.remove(productId);
+    }
+
+    public static void incrCart(Long productId) {
+        cartMap.get(productId).incrCount();
+    }
+
+    public static void decrCart(Long productId) {
+        boolean result = cartMap.get(productId).decrCount();
+        if (result) {
+            cartMap.remove(productId);
+        }
+    }
+
+    public static Cart getCart(Long id) {
+        return cartMap.get(id);
+    }
+
+
 }
