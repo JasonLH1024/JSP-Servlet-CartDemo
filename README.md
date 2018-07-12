@@ -1,6 +1,7 @@
 ## Javaweb基础案例之JSP+Servlet实现在线课程网站购物车
 
 <h2>技术点介绍</h2>
+
 ![技术点](https://github.com/geekerstar/JSP-Servlet-CartDemo/blob/master/img/2018071008583762.png)
 
 
