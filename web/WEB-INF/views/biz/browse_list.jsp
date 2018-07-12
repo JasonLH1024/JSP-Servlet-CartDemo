@@ -46,7 +46,7 @@
             <!-- 商品列表 -->
             <c:forEach items="${products}" var="product">
                 <ul class="order-list">
-                    <li><input type="checkbox" class="check" checked name="products" value="${product.id}" ></li>
+                    <li><input type="checkbox" class="check" checked name="products" value="${product.id}"></li>
                     <li class="img-box">
                         <a href="http://www.imooc.com">
                             <img src="../../../img/g1.jpg" alt="">
@@ -93,7 +93,9 @@
     <div class="waper">
         <div class="footerWaper">
             <div class="followus">
-                <a href="" class="followus_weixin"><div class="flw-weixin-box"></div></a>
+                <a href="" class="followus_weixin">
+                    <div class="flw-weixin-box"></div>
+                </a>
                 <a href="" class="followus_weibo"></a>
                 <a href="" class="followus_qzone"></a>
             </div>

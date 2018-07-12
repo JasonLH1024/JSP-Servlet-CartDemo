@@ -13,7 +13,7 @@ import java.io.IOException;
  * @Date: 2018/7/12 16:19
  * @Description:商品（课程）控制器
  */
-public class ProductServlet extends HttpServlet{
+public class ProductServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();

@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- *
  * 收藏控制器
  *
  * @version 1.0

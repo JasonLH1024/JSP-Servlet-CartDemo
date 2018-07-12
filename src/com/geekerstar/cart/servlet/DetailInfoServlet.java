@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- *
  * 详情Servlet
  *
  * @version 1.0

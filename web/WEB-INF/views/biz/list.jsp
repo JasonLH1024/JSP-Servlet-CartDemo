@@ -10,20 +10,25 @@
         .btn {
             color: blue;
             background-color: #FFFFFF;
-            border: 0px none;  //去边框
-        font-family: "宋体";
+            border: 0px none;
+        / / 去边框 font-family: "宋体";
             font-size: 15px;
-            text-decoration:underline;  //加下划线
+            text-decoration: underline;
+        / / 加下划线
         }
-        .btn:hover{
-            color:red;
+
+        .btn:hover {
+            color: red;
             border: none;
             cursor: hand;
             cursor: pointer;
-            text-decoration:underline;  //加下划线
+            text-decoration: underline;
+        / / 加下划线
         }
+
         .btn:focus {
-            outline: none;    //去边框
+            outline: none;
+        / / 去边框
         }
     </style>
 </head>
@@ -151,7 +156,9 @@
     <div class="waper">
         <div class="footerWaper">
             <div class="followus">
-                <a href="" class="followus_weixin"><div class="flw-weixin-box"></div></a>
+                <a href="" class="followus_weixin">
+                    <div class="flw-weixin-box"></div>
+                </a>
                 <a href="" class="followus_weibo"></a>
                 <a href="" class="followus_qzone"></a>
             </div>

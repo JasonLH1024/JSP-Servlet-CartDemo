@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 /**
  * @Author: Geekerstar(jikewenku.com)
  * @Date: 2018/7/12 16:24
@@ -47,7 +48,8 @@ public final class LocalCache {
         productMap.put(25l, new Product(25l, "HTML/CSS", "HTML+CSS基础课程", "HTML+CSS基础教程8小时带领大家步步深入学习标签用法和意义", "初级", 219));
     }
 
-    private LocalCache() {}
+    private LocalCache() {
+    }
 
     public static List<Product> getProducts() {
         return new ArrayList<>(productMap.values());
