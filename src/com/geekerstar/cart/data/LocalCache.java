@@ -9,11 +9,15 @@ import java.util.Map;
  * @Date: 2018/7/12 16:24
  * @Description:
  */
-public class LocalCache {
+public final class LocalCache {
 
     private static Map<Long, Product> productMap = new HashMap<>();
 
     private static Map<Long, Cart> cartMap = new HashMap<>();
+
+    private static Map<Long, Product> favoriteMap = new HashMap<>();
+
+    private static Map<Long, Product> browseLogMap = new HashMap<>();
 
     static {
         productMap.put(1l, new Product(1l, "HTML/CSS", "HTML+CSS基础课程", "HTML+CSS基础教程8小时带领大家步步深入学习标签用法和意义", "初级", 219));
@@ -84,5 +88,65 @@ public class LocalCache {
         return cartMap.get(id);
     }
 
+    public static void addFavorite(Product product) {
+        if (!favoriteMap.containsKey(product.getId())) {
+            favoriteMap.put(product.getId(), product);
+        }
+    }
+
+    public static void delFavorite(Long productId) {
+        if (favoriteMap.containsKey(productId)) {
+            favoriteMap.remove(productId);
+        }
+    }
+
+    public static List<Product> getFavorites() {
+        return new ArrayList<>(favoriteMap.values());
+    }
+
+    public static void addBrowseLog(Product product) {
+        browseLogMap.put(product.getId(), product);
+    }
+
+    public static void deleteBrowseLog(Long productId) {
+        browseLogMap.remove(productId);
+    }
+
+    public static List<Product> getBrowseLogs() {
+        return new ArrayList<>(browseLogMap.values());
+    }
+
+    public static List<Product> getProducts(int page, int size, String name) {
+        List<Product> products = new ArrayList<>();
+
+        if (null != name && !"".equals(name)) {
+            productMap.values().forEach(product -> {
+                if (product.getName().contains(name)) {
+                    products.add(product);
+                }
+            });
+        } else {
+            products.addAll(productMap.values());
+        }
+
+        int start = (page - 1) * size;
+        int end = products.size() >= page * size ? page * size : products.size();
+        return products.subList(start, end);
+    }
+
+    public static int getProductsCount(String name) {
+        List<Product> products = new ArrayList<>();
+
+        if (null != name && !"".equals(name)) {
+            productMap.values().forEach(product -> {
+                if (product.getName().contains(name)) {
+                    products.add(product);
+                }
+            });
+        } else {
+            products.addAll(productMap.values());
+        }
+        return products.size();
+    }
 
 }

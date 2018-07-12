@@ -21,8 +21,29 @@ public class ProductServlet extends HttpServlet{
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       req.setAttribute("products", LocalCache.getProducts());
-      req.getRequestDispatcher("/WEB-INF/views/biz/list.jsp").forward(req, resp);
+//        req.setAttribute("products", LocalCache.getProducts());
+//        req.getRequestDispatcher("/WEB-INF/views/biz/list.jsp").forward(req, resp);
+
+        String name = req.getParameter("title");
+
+        String pageStr = req.getParameter("page");
+        int page = 1;
+        if (null != pageStr && !"".equals(pageStr)) {
+            page = Integer.parseInt(pageStr);
+        }
+
+        int totalProducts = LocalCache.getProductsCount(name);
+        int totalPage = totalProducts % 12 > 0 ? totalProducts / 12 + 1 : totalProducts / 12;
+
+        req.setAttribute("curPage", page);
+        req.setAttribute("prePage", page > 1 ? page - 1 : 1);
+        req.setAttribute("nextPage", totalPage > page ? page + 1 : totalPage);
+        req.setAttribute("totalPage", totalPage);
+        req.setAttribute("title", name);
+
+
+        req.setAttribute("products", LocalCache.getProducts(page, 12, name));
+        req.getRequestDispatcher("/WEB-INF/views/biz/list.jsp").forward(req, resp);
     }
 
     @Override
