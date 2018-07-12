@@ -1,7 +1,8 @@
 ## Javaweb基础案例之JSP+Servlet实现在线课程网站购物车
 
 <h2>技术点介绍</h2>
-![技术点](https://github.com/geekerstar/JSP-Servlet-CartDemo/tree/master/img/2018071008583762.png)
+![技术点](https://github.com/geekerstar/JSP-Servlet-CartDemo/blob/master/img/2018071008583762.png)
+
 
 <h2>精华总结</h2>
 巩固jsp、Servlet、Filter等技术点
@@ -28,8 +29,8 @@ Filter解决数据传输乱码
 
 
 <h2>项目预览</h2>
-![预览](https://github.com/geekerstar/JSP-Servlet-CartDemo/tree/master/img/TIM截图20180712175924.png)
+![预览](https://github.com/geekerstar/JSP-Servlet-CartDemo/blob/master/img/TIM截图20180712175924.png)
 
-![预览](https://github.com/geekerstar/JSP-Servlet-CartDemo/tree/master/img/TIM截图20180712175935.png)
+![预览](https://github.com/geekerstar/JSP-Servlet-CartDemo/blob/master/img/TIM截图20180712175935.png)
 
-![预览](https://github.com/geekerstar/JSP-Servlet-CartDemo/tree/master/img/TIM截图20180712175944.png)
+![预览](https://github.com/geekerstar/JSP-Servlet-CartDemo/blob/master/img/TIM截图20180712175944.png)
